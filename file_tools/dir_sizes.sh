@@ -13,6 +13,7 @@ do
 	# sudo du -sh $1/$dir | tee -a sizes.txt
 	if ! [ "$dir" == "DATASETS" ]
 	then
+		echo -e "Processing: $dir\n"
 		sudo du -sh $1/$dir | tee -a sizes.txt
 	fi
 done
