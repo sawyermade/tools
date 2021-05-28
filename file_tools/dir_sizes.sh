@@ -10,5 +10,9 @@ echo "File/Directory sizes for directory: $1" | tee sizes.txt
 for dir in $dirs
 do
 	# Appends to sizes.txt
-	sudo du -sh $1/$dir | tee -a sizes.txt
+	# sudo du -sh $1/$dir | tee -a sizes.txt
+	if ! [ "$dir" == "DATASETS" ]
+	then
+		sudo du -sh $1/$dir | tee -a sizes.txt
+	fi
 done
