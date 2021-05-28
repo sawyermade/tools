@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get all files and dirs
-dirs=$(ls $1)
+dirs=$(sudo ls $1)
 
 # Creates initial file
 echo "File/Directory sizes for directory: $1" | tee sizes.txt
@@ -10,5 +10,5 @@ echo "File/Directory sizes for directory: $1" | tee sizes.txt
 for dir in $dirs
 do
 	# Appends to sizes.txt
-	du -sh $1/$dir | tee -a sizes.txt
+	sudo du -sh $1/$dir | tee -a sizes.txt
 done
